@@ -1,0 +1,54 @@
+{
+  "id": "memory-qdrant",
+  "name": "Memory Qdrant",
+  "version": "1.1.0",
+  "description": "团队向量记忆插件 - 自动捕获对话到 Qdrant + Ollama bge-m3",
+  "author": "TeamClaw",
+  "license": "MIT",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "qdrantUrl": {
+        "type": "string",
+        "default": "http://localhost:6333",
+        "description": "Qdrant 服务器地址"
+      },
+      "ollamaUrl": {
+        "type": "string",
+        "default": "http://localhost:11434",
+        "description": "Ollama 服务器地址"
+      },
+      "embeddingModel": {
+        "type": "string",
+        "default": "bge-m3",
+        "description": "嵌入模型名称"
+      },
+      "autoCapture": {
+        "type": "boolean",
+        "default": true,
+        "description": "自动捕获对话内容"
+      },
+      "autoRecall": {
+        "type": "boolean",
+        "default": true,
+        "description": "自动检索相关记忆"
+      },
+      "captureKeywords": {
+        "type": "array",
+        "items": { "type": "string" },
+        "default": [],
+        "description": "关键词过滤：为空时捕获全部，有值时只捕获包含关键词的对话"
+      },
+      "collections": {
+        "type": "object",
+        "default": {
+          "memory": "team_memory_v3",
+          "code": "code_index_v3",
+          "decision": "decision_log_v3"
+        },
+        "description": "Qdrant Collections 映射"
+      }
+    },
+    "additionalProperties": false
+  }
+}
