@@ -1,0 +1,30 @@
+{
+  "name": "@openclaw/memory-qdrant",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "OpenClaw Memory Plugin with Qdrant + Ollama bge-m3",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "undici": "^6.24.1"
+  },
+  "devDependencies": {
+    "@sinclair/typebox": "^0.34.49",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "author": "TeamClaw",
+  "license": "MIT"
+}
